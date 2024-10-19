@@ -4,7 +4,8 @@ import math
 
 a = r'a*b*|a(a|b)*|bb'  # Введите свое регулярное выражение
 b = r'a(a|b)*|bb|1'  # Введите регулярное выражение для сравнения
-alph = 'abcdef'
+alph = 'qwertyuiopasdfghjklzxcvbnm'  # Допустимые переменные
+
 
 def main():
     i = 0
