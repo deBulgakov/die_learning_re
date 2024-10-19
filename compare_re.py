@@ -5,12 +5,12 @@ import math
 a = r'a*b*|a(a|b)*|bb'  # Введите свое регулярное выражение
 b = r'a(a|b)*|bb|1'  # Введите регулярное выражение для сравнения
 alph = 'qwertyuiopasdfghjklzxcvbnm'  # Допустимые переменные
-
+n_tests = 100 # Количество тестов на слово\переменную
 
 def main():
     i = 0
     n_used = len(set([i for i in alph if i in a or i in b]))
-    limit_tests = 100 ** (max(a.count('|'), b.count('|'), n_used))
+    limit_tests = n_tests ** (max(a.count('|'), b.count('|'), n_used))
     limit_generated = math.ceil(math.log(limit_tests, n_used))
     for test in exrex.generate(b, limit_generated):
         if re.match(a, test) is None:
